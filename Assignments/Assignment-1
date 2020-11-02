@@ -5,6 +5,6 @@ function add() {
   }
   return sum;
 }
- console.log(10);
- console.log(10, 20);
- console.log(10, 20, 30);
+ console.log(add(10));
+ console.log(add(10, 20));
+ console.log(add(10, 20, 30));
