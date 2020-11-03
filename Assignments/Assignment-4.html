@@ -9,43 +9,60 @@
     <script src="react-dom.development.js"></script>
     <script src="babel.min.js"></script>
     <script type="text/babel">
-      class Products extends React.Component {
+      class Products extends React.Component{
         state = {
-          productArray: [],
-          item: "",
-          error: ""
-        };
-
-        onSubmitItem = () => {
-          const isPresent = this.state.productArray.find(el => el === this.state.item);
-          if (isPresent) {
-            this.setState({ "error": "Item exists" });
-            return
-          }
-          this.setState({ "productArray": [...this.state.productArray, this.state.item], "item": "", "error": "", });
+          products: [],
+          item: '',
+          error: ''
         }
-        render() {
-          const productItems = this.state.productArray.map((productName, index) => (<li key={index}>{productName}</li>));
-          return (
+
+        onClickHandler = () => {
+          const { item } = this.state;
+          if(this.state.products.includes(item)){
+            this.setState({
+              item: '',
+              error: 'Item already exist.'
+            })
+            return;
+          } else if(item === ''){
+            return;
+          }else{
+            let array = this.state.products;
+            array.push(item);
+            this.setState({
+              products: array,
+              item: '',
+              error: ''
+            })
+          }
+
+        }
+
+        render(){
+          const productNames = this.state.products.map((productName, index) => (<li key={index}>{productName}</li>));
+
+          return(
             <div>
               <h1>Products</h1>
-              <hr />
+              <hr/>
               <label>Product Name :</label>
-              <input type="text" onChange={ evt => this.setState({ item : evt.target.value})} value={this.state.item} />
-              <input type="button" value="Add Product" onClick={this.onSubmitItem} />
-              <p>{this.state.error}</p>
+              <input type="text" onChange={ evt => this.setState({ item : evt.target.value})} value={this.state.item}/>
+              <input type="button" value="Add Product" onClick={this.onClickHandler}/>
+              {this.state.error !== '' ? <p>{this.state.error}</p> : null}
               <ol>
-                {productItems}
+                {productNames}
               </ol>
             </div>
           )
         }
       }
-      ReactDOM.render(<Products />, document.getElementById('root'));
+
+      ReactDOM.render(<Products/>, document.getElementById('root'));
     </script>
 </head>
 <body>
 <div id="root">
+
 </div>
 </body>
 </html>
