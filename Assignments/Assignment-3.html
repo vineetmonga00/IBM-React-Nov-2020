@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Component - Intro</title>
+    <style>
+        .field {
+            margin-bottom: 10px;
+        }
+        label {
+            display: block
+        }
+        td {
+            padding-right: 10px;
+            font-size: 18pt;
+        }
+    </style>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="babel.min.js"></script>
+    <script type="text/babel">
+      class Calculator extends React.Component {
+        //state
+        state = {
+          basic: 0,
+          hra: 0,
+          da: 0,
+          tax: 0, salary: 0
+        };
+        //behavior
+        handleChange = (evt) => {
+          this.setState({ [evt.target.name]: evt.target.value });
+        }
+        calculateSalary = () => {
+          const { basic,
+            hra,
+            da,
+            tax } = this.state;
+          const total = (+basic + +hra + +da);
+          const salaryAfterTax = total - (total * (tax / 100))
+          this.setState({ salary: salaryAfterTax });
+        }
+        //presentation
+        render() {
+          return (
+            <div>
+              <h1>Salary Calculator</h1>
+              <hr />
+              <div className="field">
+                <label htmlFor="">Basic :</label>
+                <input type="number" name="basic" id="basic" value={this.state.basic} onChange={this.handleChange} />
+              </div>
+              <div className="field">
+                <label htmlFor="">HRA :</label>
+                <input type="number" name="hra" id="hra" value={this.state.hra} onChange={this.handleChange} />
+              </div>
+              <div className="field">
+                <label htmlFor="">DA :</label>
+                <input type="number" name="da" id="da" value={this.state.da} onChange={this.handleChange} />
+              </div>
+              <div className="field">
+                <label htmlFor="">Tax :</label>
+                <input type="range" name="tax" id="tax" min="0" max="30" value={this.state.tax} onChange={this.handleChange} />
+              </div>
+              <div className="field">
+                <input type="button" value="Calculate" onClick={this.calculateSalary} />
+              </div>
+              <div className="field">
+                <table>
+                  <tbody>
+                  <tr>
+                    <td>[BASIC]</td>
+                    <td>[HRA]</td>
+                    <td>[DA]</td>
+                    <td>[Tax]</td>
+                    <td>[Salary]</td>
+                  </tr>
+                  <tr>
+                    <td>{this.state.basic}</td>
+                    <td>{this.state.hra}</td>
+                    <td>{this.state.da}</td>
+                    <td>{this.state.tax}</td>
+                    <td>{this.state.salary}</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )
+        }
+      }
+      ReactDOM.render(
+        <div>
+          <Calculator />
+        </div>,
+        document.getElementById('root'))
+    </script>
+</head>
+<body>
+<div id="root"></div>
+</body>
+</html>
