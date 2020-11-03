@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c6039ae-3ed5-4ccd-ac45-0ad1a738e4ef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assignments/Assignment-3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignments/Assignment-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/Assignments/Assignment-3.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -29,8 +27,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assignments/Assignment-3.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="651">
-              <caret line="103" column="7" selection-start-line="103" selection-start-column="7" selection-end-line="103" selection-end-column="7" />
+            <state relative-caret-position="306">
+              <caret line="78" column="30" selection-start-line="78" selection-start-column="30" selection-end-line="78" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -118,12 +116,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1604300085622</updated>
-      <workItem from="1604300088239" duration="4825000" />
+      <workItem from="1604300088239" duration="6219000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4825000" />
+    <option name="totallyTimeSpent" value="6219000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="687" extended-state="0" />
@@ -175,8 +173,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assignments/Assignment-3.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="103" column="7" selection-start-line="103" selection-start-column="7" selection-end-line="103" selection-end-column="7" />
+        <state relative-caret-position="306">
+          <caret line="78" column="30" selection-start-line="78" selection-start-column="30" selection-end-line="78" selection-end-column="30" />
         </state>
       </provider>
     </entry>
