@@ -27,10 +27,11 @@
           } else if(item === ''){
             return;
           }else{
-            let array = this.state.products;
-            array.push(item);
             this.setState({
-              products: array,
+              products: [
+                ...this.state.products,
+                this.state.item
+              ],
               item: '',
               error: ''
             })
