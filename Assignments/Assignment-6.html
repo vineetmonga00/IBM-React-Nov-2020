@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>State Manager</title>
+    <script src="redux.js"></script>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="babel.min.js"></script>
+    <!--
+        1. initial version
+        2. introducing action creators
+        3. simplying passing the action creator methods to the component
+        4. removing dependency on the 'store' in the component
+        5. introducing action dispatchers
+        6. refactoring the component
+        7. generalizing the 'bindActionCreators'
+        8. refactoring 'bindActionCreators' to state-manager.js
+        9. replace 'state-manager.js' with 'redux.js'
+     -->
+    <script type="text/babel">
+      class Calculator extends React.Component {
+        state = {
+          a: 0,
+          b: 0
+        };
+
+        render(){
+          const { value, add, subract, multiply, divide } = this.props,
+            { a, b } = this.state
+          return(
+            <div>
+              <h1>Calculator</h1>
+
+                <input type="number" name="" id="" onChange={ evt => this.setState({ a : parseInt(evt.target.value)})}/>
+                  <input type="number" name="" id="" onChange={ evt => this.setState({ b : parseInt(evt.target.value)})}/>
+                    <br/>
+                  <input type="button" value="Add" onClick={() => add(a,b)}/>
+                  <input type="button" value="Subtract" onClick={() => subract(a,b)}/>
+                  <input type="button" value="Multiply" onClick={() => multiply(a,b)}/>
+                  <input type="button" value="Divide" onClick={() => divide(a,b)}/>
+                  <div>{value}</div>
+            </div>
+          )
+        }
+      }
+
+      function calReducer(currentState = 0, action){
+        if (action.type === 'ADD') return currentState + (action.payload || 1);
+        if (action.type === 'SUBTRACT') return currentState - (action.payload || 1);
+        if (action.type === 'MULTIPLY') return currentState - (action.payload || 1);
+        if (action.type === 'DIVIDE') return currentState - (action.payload || 1);
+        return currentState;
+      }
+
+      const calActionCreators = {
+        add(a,b){
+          const action = { type : 'ADD', payload : a+b };
+          return action;
+        },
+        subract(a,b){
+          const action = { type : 'SUBTRACT', payload : a-b };
+          return action;
+        },
+        multiply(a,b){
+          const action = { type : 'MULTIPLY', payload : a*b };
+          return action;
+        },
+        divide(a,b){
+          const action = { type : 'DIVIDE', payload : a/b };
+          return action;
+        }
+      }
+
+      const store = Redux.createStore(calReducer);
+
+      const calActionDispatchers = Redux.bindActionCreators(calActionCreators, store.dispatch);
+
+      function renderCal(){
+
+        const value = store.getState();
+
+        ReactDOM.render(
+          <Calculator value={value} {...calActionDispatchers} />
+          , document.getElementById('root'));
+      }
+      renderCal();
+      store.subscribe(renderCal);
+    </script>
+</head>
+<body>
+<div id="root">
+
+
+</div>
+</body>
+</html>
