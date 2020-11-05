@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Products</title>
+    <style>
+        body{
+            margin-left: 10px;
+        }
+        section{
+            margin-bottom: 10px;
+        }
+        .field{
+            margin-bottom:10px;
+        }
+        .edit label{
+            display : block;
+        }
+        section.edit {
+            padding : 10px;
+            border : 1px solid black;
+            width : 500px;
+        }
+        ol{
+            width : 500px;
+            list-style: none;
+            -webkit-padding-start: 0px;
+        }
+        li{
+            margin-bottom: 10px;
+            padding : 10px;
+            border-radius: 5px;
+            border : 1px solid gray;
+        }
+        .name {
+            font-size: 18pt;
+            padding-bottom: 5px;
+        }
+        .price {
+            font-size: 15pt;
+            font-style: italic;
+            font-weight: bold;
+        }
+        .outofstock {
+            color : red;
+            text-decoration: line-through;
+            font-style: italic;
+        }
+        .stats{
+            font-size: 18pt;
+        }
+    </style>
+    <!--
+        Use Cases :
+            1. Add products
+            2. List the added products
+            3. Toggle the 'out of stock' status of any product
+            4. Remove any product
+            5. Remove 'out of stock' products
+            6. Display the stats ( # of out of stock products / total # of products)
+            7. Persist the products in the server
+     -->
+</head>
+<body>
+<h3>Products</h3>
+<hr>
+<section class="stats">
+    <span class="outofstock">1</span>
+    <span> / </span>
+    <span>2</span>
+</section>
+<section class="edit">
+    <div class="field">
+        <label for="">Name :</label>
+        <input type="text" name="" id="">
+    </div>
+    <div class="field">
+        <label for="">Description :</label>
+        <input type="text" name="" id="">
+    </div>
+    <div class="field">
+        <label for="">Price :</label>
+        <input type="number" name="" id="">
+    </div>
+    <div class="field">
+        <input type="button" value="Add Product">
+    </div>
+</section>
+
+<section class="list">
+    <ol>
+        <li>
+            <span class="name">Product Name - 1</span>
+            <div>Aute sunt ea occaecat est voluptate sint ex non reprehenderit in velit. Commodo anim incididunt irure id et quis laborum veniam pariatur esse culpa ex sunt. Veniam nostrud dolor voluptate nulla tempor eiusmod excepteur sunt non pariatur consequat nulla. Amet dolor do minim eiusmod aliquip est fugiat voluptate ipsum incididunt ex magna in elit. Commodo occaecat est veniam elit laboris ipsum in amet aliqua ex proident irure. Esse quis irure id qui cupidatat irure aliqua quis sit ex fugiat velit eu. Cupidatat magna pariatur enim enim dolore commodo ut aliquip occaecat.</div>
+            <div class="price">Price</div>
+            <input type="checkbox" name="" id="">
+            <label for="">Out of Stock</label>
+            <br>
+            <input type="button" value="Remove">
+        </li>
+        <li>
+            <span class="name outofstock">Product Name - 2</span>
+            <div>Elit nulla pariatur eiusmod sunt ut ad laboris. Aliqua incididunt anim do sint tempor mollit. Nulla aliquip sunt veniam adipisicing exercitation reprehenderit magna. Mollit magna do velit eiusmod culpa ex ea labore. Lorem minim velit esse ipsum culpa. Voluptate amet id incididunt ad excepteur consequat nulla ullamco.</div>
+            <div class="price">Price</div>
+            <input type="checkbox" name="" id="">
+            <label for="">Out of Stock</label>
+            <br>
+            <input type="button" value="Remove">
+        </li>
+    </ol>
+    <input type="button" value="Remove Out Of Stock" />
+</section>
+</body>
+</html>
