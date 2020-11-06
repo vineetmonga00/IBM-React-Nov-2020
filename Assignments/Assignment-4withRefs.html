@@ -9,6 +9,17 @@
     <script src="react-dom.development.js"></script>
     <script src="babel.min.js"></script>
     <script type="text/babel">
+      class ProductCount extends React.Component{
+        render() {
+          const { productCount } = this.props
+          return (
+            <div>
+              <span>Count : </span>
+              <span>{productCount}</span>
+            </div>
+          )
+        }
+      }
       class Products extends React.Component{
         state = {
           products: [],
@@ -18,12 +29,11 @@
         txtNewProductNameRef = React.createRef();
         onBtnAddHandler = () => {
           const newProductName = this.txtNewProductNameRef.current.value;
-          if(newProductName!== ''){
+          if(newProductName!== '' && !this.state.products.includes(newProductName)){
             this.setState({ products : [ newProductName, ...this.state.products] });
-            this.txtNewProductNameRef.current.value = '';
           }
+          this.txtNewProductNameRef.current.value = '';
         }
-
         render(){
           const productNames = this.state.products.map((productName, index) => (<li key={index}>{productName}</li>));
 
@@ -31,6 +41,7 @@
             <div>
               <h1>Products</h1>
               <hr/>
+              <ProductCount productCount={this.state.products.length} />
               <label>Product Name :</label>
               <input type="text" ref={this.txtNewProductNameRef}/>
               <input type="button" value="Add Product" onClick={this.onBtnAddHandler}/>

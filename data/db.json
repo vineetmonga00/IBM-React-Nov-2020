@@ -1,0 +1,70 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Stationary"
+    },
+    {
+      "id": 2,
+      "name": "Grocery"
+    },
+    {
+      "id": 3,
+      "name": "Utencils"
+    },
+    {
+      "id": 4,
+      "name": "aaa"
+    },
+    {
+      "id": 5,
+      "name": "Stationary"
+    },
+    {
+      "id": 6,
+      "name": "kl"
+    }
+  ],
+  "products": [
+    {
+      "id": 2,
+      "name": "Pencil",
+      "isOutOfStock": false,
+      "price": 5,
+      "category": "Stationary",
+      "description": "Ipsum anim dolore irure amet ut ullamco sint deserunt est eiusmod. Cupidatat excepteur sint exercitation laboris ut. Velit et voluptate irure dolore velit irure consequat Lorem aliqua non velit exercitation laborum."
+    },
+    {
+      "id": 3,
+      "name": "Pen",
+      "description": "Ipsum anim dolore irure amet ut ullamco sint deserunt est eiusmod. Cupidatat excepteur sint exercitation laboris ut. Velit et voluptate irure dolore velit irure consequat Lorem aliqua non velit exercitation laborum.",
+      "price": 10,
+      "isOutOfStock": true,
+      "category": "Stationary"
+    },
+    {
+      "id": 4,
+      "name": "",
+      "description": "",
+      "price": 0,
+      "isOutOfStock": false,
+      "category": 0
+    },
+    {
+      "id": 5,
+      "name": "",
+      "description": "",
+      "price": 0,
+      "isOutOfStock": false,
+      "category": 0
+    },
+    {
+      "id": 6,
+      "name": "",
+      "description": "",
+      "price": 0,
+      "isOutOfStock": false,
+      "category": 0
+    }
+  ]
+}
