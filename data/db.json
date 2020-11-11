@@ -66,5 +66,53 @@
       "isOutOfStock": false,
       "category": 0
     }
+  ],
+  "productList": [
+    {
+    "productId": "1",
+    "productName": "Product-1",
+    "productPrice": "$20"
+    },
+    {
+    "productId": "2",
+    "productName": "Product-2",
+    "productPrice": "$20"
+    },
+    {
+    "productId": "3",
+    "productName": "Product-3",
+    "productPrice": "$20"
+    },
+    {
+    "productId": "4",
+    "productName": "Product-4",
+    "productPrice": "$20"
+    }
+  ],
+  "cartList": [
+    {
+    "productId": "1",
+    "productName": "Product-1",
+    "productPrice": "$20",
+    "productQty": "1"
+    },
+    {
+    "productId": "2",
+    "productName": "Product-2",
+    "productPrice": "$20",
+    "productQty": "1"
+    },
+    {
+    "productId": "3",
+    "productName": "Product-3",
+    "productPrice": "$20",
+    "productQty": "1"
+    },
+    {
+    "productId": "4",
+    "productName": "Product-4",
+    "productPrice": "$20",
+    "productQty": "1"
+    }
   ]
 }
